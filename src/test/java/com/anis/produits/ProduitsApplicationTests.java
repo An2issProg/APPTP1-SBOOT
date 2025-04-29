@@ -1,9 +1,11 @@
 package com.anis.produits;
 
+import com.anis.produits.entities.Categorie;
 import com.anis.produits.entities.Produit;
 import com.anis.produits.repo.ProduitRepository;
 import com.anis.produits.service.ProduitService;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -90,15 +92,84 @@ public class ProduitsApplicationTests implements CommandLineRunner {
             System.out.println(p);
         }
     }
+    
+	/*Q8 - -Q9 TEST FIND BY NOMPRODUITS CONTAINS()*/
+    @Test
+    public void testFindByNomProduit()
+    {
+	    List<Produit> prods = produitRepository.findByNomProduit("iphone X");
+	    for (Produit p : prods)
+	    {
+	    System.out.println(p);
+    }
+    }
+    
 
     // Test case for pagination - Find products by page
-    public void testFindByNomProduitContains() {
-        Page<Produit> prods = produitService.getAllProduitsParPage(0, 2);
-        System.out.println("Taille page : " + prods.getSize());
-        System.out.println("Total éléments : " + prods.getTotalElements());
-        System.out.println("Total pages : " + prods.getTotalPages());
-        prods.getContent().forEach(p -> {
-            System.out.println(p.toString());
-        });
+    @Test
+    public void testFindByNomProduitContains ()
+    {
+	    List<Produit> prods=produitRepository.findByNomProduitContains("iphone");
+	    for (Produit p : prods)
+	    {
+	    System.out.println(p);
+    } }
+    
+/* TEST FIND BY NOMPRIX*/
+     @Test
+    public void testfindByNomPrix()
+	    {
+		    List<Produit> prods = produitRepository.findByNomPrix("iphone X", 1000.0);
+		    for (Produit p : prods)
+		    {
+		    System.out.println(p);
     }
+    }
+     
+ 	/*CATEGORIE TEST*/
+     @Test
+     public void testfindByCategorie()
+	     {
+		     Categorie cat = new Categorie();
+		     cat.setIdCat(1L);
+		     List<Produit> prods = produitRepository.findByCategorie(cat);
+		     for (Produit p : prods)
+	     {
+		    	 System.out.println(p);
+         }
+       }
+       /* find by IDcat */
+     @Test
+     public void findByCategorieIdCat()
+	     {
+	     List<Produit> prods = produitRepository.findByCategorieIdCat(1L);
+	     for (Produit p : prods)
+	     {
+	     System.out.println(p);
+	     }
+     }
+     
+     /* Trier  Q17 */
+     @Test
+     public void testfindByOrderByNomProduitAsc()
+     {
+		     List<Produit> prods =
+		     produitRepository.findByOrderByNomProduitAsc();
+		     for (Produit p : prods)
+		     {
+		     System.out.println(p);
+		     }
+     }
+     /* Trier NoMprix */
+     @Test
+     public void testTrierProduitsNomsPrix()
+	     {
+	     List<Produit> prods = produitRepository.trierProduitsNomsPrix();
+	     for (Produit p : prods)
+	     {
+	     System.out.println(p);
+     }
+     }
+    
+    
 }

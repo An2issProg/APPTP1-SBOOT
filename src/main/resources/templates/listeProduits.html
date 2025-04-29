@@ -7,18 +7,66 @@ href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
 <meta charset="utf-8">
 <title>Liste des Produits</title>
 <style>
-	.card{
-		 background-color :black;
-		 color: rgb(0, 0, 0);
-		 font-size: 20px;
-		 text-decoration:none;
-		 box-sizing: content-box;
-		 font-family: Cambria;
-	}
-	
-	.container{
-		background-color: rgb(192, 192, 192);
-	}		
+	body {
+	            background-color: rgb(0, 0, 0);
+	            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	        }
+
+	        .card {
+	            margin-top: 30px;
+	            background-color: rgb(128, 0, 64);
+	            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	        }
+
+	        .card-header {
+	            background-color: #007bff;
+	            color: rgb(64, 0, 64);
+	            font-size: 1.5rem;
+				border: 2px solid black;
+				text-decoration: underline;
+	        }
+
+	        .table th, .table td {
+	            vertical-align: middle;
+	        }
+
+	        .pagination .btn {
+	            margin: 2px;
+	        }
+		 /*button  styles */
+		 .btn-danger {
+		     background-color: #dc3545;
+		     border: none;
+		     font-weight: bold;
+		     transition: background-color 0.3s ease;
+		 }
+
+		 .btn-danger:hover {
+		     background-color: #c82333;
+		 }
+
+		 .btn-outline-primary {
+		     border-color: #007bff;
+		     color: #007bff;
+		 }
+
+		 .btn-outline-primary:hover {
+		     background-color: #007bff;
+		     color: white;
+		 }
+
+		 .pagination .btn {
+		     margin: 0 5px;
+		     min-width: 40px;
+		 }
+
+		 .btn-sm {
+		     padding: 0.25rem 0.5rem;
+		     font-size: 0.875rem;
+		     border-radius: 0.2rem;
+		 }
+
+		 
 </style>
 </head>
 <body>

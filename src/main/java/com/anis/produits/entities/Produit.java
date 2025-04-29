@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
@@ -85,4 +86,16 @@ return "Produit [idProduit=" + idProduit + ", nomProduit=" +
 nomProduit + ", prixProduit=" + prixProduit
 + ", dateCreation=" + dateCreation + "]";
 	}
+
+
+@ManyToOne
+private Categorie categorie;
+
+
+		public Categorie getCategorie() {
+			return categorie;
+			}
+			public void setCategorie(Categorie categorie) {
+				this.categorie = categorie;
+			}
 }

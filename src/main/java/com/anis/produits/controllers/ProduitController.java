@@ -25,9 +25,9 @@ public class ProduitController {
     // Display paginated list of products
     @RequestMapping("/ListeProduits")
     public String listeProduits(
-            ModelMap modelMap,
-            @RequestParam(name = "page", defaultValue = "0") int page,
-            @RequestParam(name = "size", defaultValue = "2") int size) {
+	            ModelMap modelMap,
+	            @RequestParam(name = "page", defaultValue = "0") int page,
+	            @RequestParam(name = "size", defaultValue = "2") int size) {
 
         Page<Produit> prods = produitService.getAllProduitsParPage(page, size);
         modelMap.addAttribute("produits", prods);
