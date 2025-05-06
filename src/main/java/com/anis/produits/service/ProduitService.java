@@ -17,7 +17,7 @@ public interface ProduitService {
 	Produit getProduit(Long id);
 	List<Produit> getAllProduits();
 	
-	
+	/*PARTIE DE LA TP4 */ 
 	List<Produit> findByNomProduit(String nom);
 	List<Produit> findByNomProduitContains(String nom);
 	List<Produit> findByNomPrix (String nom, Double prix);

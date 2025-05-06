@@ -21,8 +21,12 @@ public class Categorie {
 	private Long idCat;
 	private String nomCat;
 	private String descriptionCat;
-	@JsonIgnore
+	@JsonIgnore 
 	@OneToMany(mappedBy = "categorie")
 	private List<Produit> produits;
+	
+	
+	
+	
 }
 //AFTER INSTALLED LOMBOK
